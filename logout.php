@@ -1,4 +1,5 @@
 <?php
+//tas bort session med dessa namn
 session_start();
 unset($_SESSION['email']);
 unset($_SESSION['id']);

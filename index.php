@@ -8,6 +8,9 @@ $conn = mysqli_connect("localhost","root","")
 or die("Could not connect:" .mysqli_error($conn));
 mysqli_select_db($conn, "slutprojekt") or die('db will not open');
 // check email funktion funkar nu
+
+// här använde jag samma funktion som $check_email i signup.php fast den här gången man checkar också om password:en är korrekt
+//om inloggnings uppgifterne stämmer så redirektar användaren till welcome.php
 $query = mysqli_query($conn, "SELECT * FROM test1 WHERE email = '$email' and pass = '$password'");
 $row = mysqli_fetch_array($query,MYSQLI_ASSOC);
 $_SESSION['firstname'] = $row['firstname'];
@@ -53,21 +56,4 @@ if(mysqli_num_rows($check_user) == 1){
     <p class="mb-5 mx-5"><a href="register.php"class="btn-light btn-block btn-lg">Register in here</a></p>
     </form>
     </div>
-    <?php
-        /*
-        $conn = mysqli_connect("localhost","root","")
-        or die("Could not connect:" .mysqli_error($conn));
-        mysqli_select_db($conn, "elev_info") or die('db will not open');
-        $query = "CREATE TABLE students (
-            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-            firstname VARCHAR(30) NOT NULL,
-            lastname VARCHAR(30) NOT NULL,
-            lname VARCHAR(50) NOT NULL,
-            reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-    )";
-$result = mysqli_query($conn,$query) or die("invalid query");
-print"Successful query and that is good";
-mysqli_close($conn);
-*/
-    ?>
 </body>

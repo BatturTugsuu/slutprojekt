@@ -14,8 +14,13 @@ session_start();
 </head>
 <body>
     <div class="container bg-secondary mb-5">
-       
+       <!--- här skriver jag ut för och efternamnet från databasen som användaren matade in i registrationen
+       och under den visar väder beroende var man befinner sig, man kan använda vpn och visar den plats som man satt på vpn:n 
+       vilket Bond hjälpte mig att fixa det. På själva väder api:n och bootstrap delen blev jag stolt över mig vilket jag knappt kunde
+       förra året och början av den här terminen vilket visar att jag utvecklats.
+       --->
       <p class="h1 text-center bg-warning h-50">Welcome <?php echo $_SESSION['firstname'],' ',$_SESSION['lastname']; ?></p>
+      <!--- om användar väljer att logga ut så tas bort sessions i logout.php--->
       <p><a href = "logout.php" class="btn-light btn-block btn-lg justify-content-center">Sign Out</a></p>
         <div class="row text-center justify-content-center align-items-center mt-5">
             <div class="col">

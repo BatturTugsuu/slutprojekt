@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!---Jag använde bootstrap för att designa sidorna här hämtas det bootstrap library:n 
+med hjälp av angiven link där bootsrap library finns--->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +10,8 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
+  <!---här skapade jag en form för användar registration som tar emot användar information och 
+  inloggnings uppgifter som senare kommer behövas när användaren vill logga in--->
     <div class="container bg-warning bg-opacity-75 d-flex align-items-center justify-content-center">
     <?php require_once 'messages.php'; ?>
     <form method="POST" action="signup.php" class="bg-primary bg-opacity-75 text-white mb-5 mt-5 w-75 rounded rounded-3">
@@ -28,11 +32,11 @@
 </div>
 <div class="mb-3 mx-5">
   <label for="password" class="form-label h5">Password:</label>
-  <input type="text" class="form-control" id="password" placeholder="Type password here" name="password">
+  <input type="password" class="form-control" id="password" placeholder="Type password here" name="password">
 </div>
 <div class="mb-3 mx-5">
   <label for="password_confirm" class="form-label h5">Repeat Password:</label>
-  <input type="text" class="form-control" id="password_confirm" placeholder="Retype password here" name="password_confirm">
+  <input type="password" class="form-control" id="password_confirm" placeholder="Retype password here" name="password_confirm">
 </div>
 <div class="mb-3 mx-5">
   <button class="btn btn-light" type="submit" name="submit">submit</button>
@@ -42,7 +46,7 @@
     </form>
     </div>
     <?php
-    /* script för att skapa ett tabell
+    /* script för att skapa ett tabell i databasen
     $conn = mysqli_connect("localhost","root","")
         or die("Could not connect:" .mysqli_error($conn));
         mysqli_select_db($conn, "slutprojekt") or die('db will not open');
